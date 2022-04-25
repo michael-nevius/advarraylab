@@ -225,7 +225,14 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
-
+function getCuisinesAndDishes(){
+    let newDishes = dishes.map(function(el){
+       return `${el.cuisine} ${el.name}`; 
+    })
+    return newDishes;
+}
+let fullDish = getCuisinesAndDishes()
+console.log('full dish: ', fullDish)
 
 
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
@@ -252,6 +259,7 @@ console.log('The menu is:', cuisineNames)
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
