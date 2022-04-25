@@ -194,23 +194,30 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
-function tomatoAndCheese(){
-    let results = dishes.filter(function(el){
-        if(el.ingredients.includes('tomato') && el.ingredients.includes('cheese')){
-            return true;
-        }
-        else{
-            return false;
-        }})
+// function tomatoAndCheese(){
+//     let results = dishes.filter(function(el){
+//         if(el.ingredients.includes('tomato') && el.ingredients.includes('cheese')){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }})
     
-    return results;
-}
+//     return results;
+// }
 
-let theIngredients = tomatoAndCheese();
-console.log('tomato and cheese', theIngredients)
+// let theIngredients = tomatoAndCheese();
+// console.log('tomato and cheese', theIngredients)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
+let newArray = dishes.map(function(el){
+    return el.cuisine
+
+
+})
+console.log(newArray)
+
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
