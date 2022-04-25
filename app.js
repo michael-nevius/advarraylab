@@ -219,23 +219,23 @@ console.log('Mexican Foods: ', mexicanFood)
 // console.log(newArray)
 
 // BONUS: (come back to this after finishing all)
-//6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
-function uniqueCuisine(){
-    let results = dishes.map(function(el){
-        return el.cuisine
-    })
-    let filteredResults = results.filter(function(el, index){
-        if(el == results[index-1]){
-            return false;
-        }
-        else{
-            return true;
-    }})
-    return filteredResults
-}
+// 6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
+// function uniqueCuisine(){
+//     let results = dishes.map(function(el){
+//         return el.cuisine
+//     })
+//     let filteredResults = results.filter(function(el, index){
+//         if(el == results[index-1]){
+//             return false;
+//         }
+//         else{
+//             return true;
+//     }})
+//     return filteredResults
+// }
     
-let uniqueDish = uniqueCuisine();
-console.log('The menu is:', uniqueDish)
+// let uniqueDish = uniqueCuisine();
+// console.log('The menu is:', uniqueDish)
 
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
@@ -306,19 +306,30 @@ console.log('The menu is:', uniqueDish)
 // console.log('This is the total amount of servings on the menu: ', totalServings)
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
-// function uniqueCuisine(){
-//     let results = dishes.map(function(el){
-//         return el.cuisine
-//     })
-//     let filteredResults = results.filter(function(el, index){
-//         if(el.cuisine == results[index-1]){
-//             return false;
-//         }
-//         else{
-//             return true;
-//     }})
-//     return filteredResults
-// }
-    
-// let uniqueDish = uniqueCuisine();
-// console.log('The menu is:', uniqueDish)
+function uniqueCuisines(){
+    let results = dishes.map(function(el){
+        return el.cuisine    
+    })
+    let nonUniqueCuisines = results.filter(function(el, index){
+        if(results.indexOf(el) < index){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    let uniqueCuisine = dishes.filter(function(el){
+        if(nonUniqueCuisines.includes(el.cuisine)){
+            return false;
+        }
+        else{
+            return true;
+        }
+    })
+    return uniqueCuisine
+}
+let uniqueDish = uniqueCuisines();
+console.log('The menu is:', uniqueDish)
+
+//The earlier approach would have worked, but there was one small error on the line I circled.
+//Rather than scrapping it, just think about what it is trying to do and examine it closer. Think about all the variables in play. How could comparing an index of an item to the index of the filter let you know that it is a non-unique one?
