@@ -143,9 +143,26 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
-function findItalian(){
+// function findItalian(){
+//     let results = dishes.filter(function(el){
+//         if(el.cuisine === "Italian" && el.servings > 5){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }})
+    
+//     return results;
+// }
+
+// let italianFood = findItalian();
+// console.log('Italian Foods: ', italianFood)
+
+//3. Create a function that will return only dishes whose serving id number matches their serving count.
+//Filter
+function findId(){
     let results = dishes.filter(function(el){
-        if(el.cuisine === "Italian" && el.servings > 5){
+        if(el.servings === el.id){
             return true;
         }
         else{
@@ -155,15 +172,12 @@ function findItalian(){
     return results;
 }
 
-let italianFood = findItalian();
-console.log('Italian Foods: ', italianFood)
-
-//3. Create a function that will return only dishes whose serving id number matches their serving count.
-//Filter
-
+let servingcount = findId();
+console.log('dishes whose serving id number matches their serving count', servingcount)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
+
 
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
