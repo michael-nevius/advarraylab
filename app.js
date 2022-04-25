@@ -275,7 +275,20 @@ console.log('chickpea', theIngredients)
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+function getTotalServings(){
+    let menuServing = dishes.map(function(el){
+        return el.servings
+    })
 
+    let totalServingCount = menuServing.reduce(function(total, el){
+        return total + el
+       
+    })
+    return totalServingCount
+}
+
+let totalServings = getTotalServings();
+console.log('This is the total amount of servings on the menu: ', totalServings)
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
