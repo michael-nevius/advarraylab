@@ -211,12 +211,12 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
-let newArray = dishes.map(function(el){
-    return el.cuisine
+// let newArray = dishes.map(function(el){
+//     return el.cuisine
 
 
-})
-console.log(newArray)
+// })
+// console.log(newArray)
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
@@ -226,9 +226,27 @@ console.log(newArray)
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
 
+
+
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
+function getCuisine(){
 
+    let results = dishes.map(function(el){
+        return el.cuisine + ' ' + el.name
+    })
+    let filteredResults = results.filter(function(el){
+        if(el.includes('Vegetarian')){
+            return true;
+        }
+        else{
+            return false
+        }})
+    return filteredResults
+}
+
+let cuisineNames = getCuisine();
+console.log('The menu is:', cuisineNames)
 
 //BONUS
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
