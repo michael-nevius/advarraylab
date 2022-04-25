@@ -225,44 +225,57 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
-function getCuisinesAndDishes(){
-    let newDishes = dishes.map(function(el){
-       return `${el.cuisine} ${el.name}`; 
-    })
-    return newDishes;
-}
-let fullDish = getCuisinesAndDishes()
-console.log('full dish: ', fullDish)
+// function getCuisinesAndDishes(){
+//     let newDishes = dishes.map(function(el){
+//        return `${el.cuisine} ${el.name}`; 
+//     })
+//     return newDishes;
+// }
+// let fullDish = getCuisinesAndDishes()
+// console.log('full dish: ', fullDish)
 
 
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
-function getCuisine(){
+// function getCuisine(){
 
-    let results = dishes.map(function(el){
-        return el.cuisine + ' ' + el.name
-    })
-    let filteredResults = results.filter(function(el){
-        if(el.includes('Vegetarian')){
-            return true;
-        }
-        else{
-            return false
-        }})
-    return filteredResults
-}
+//     let results = dishes.map(function(el){
+//         return el.cuisine + ' ' + el.name
+//     })
+//     let filteredResults = results.filter(function(el){
+//         if(el.includes('Vegetarian')){
+//             return true;
+//         }
+//         else{
+//             return false
+//         }})
+//     return filteredResults
+// }
 
-let cuisineNames = getCuisine();
-console.log('The menu is:', cuisineNames)
+// let cuisineNames = getCuisine();
+// console.log('The menu is:', cuisineNames)
 
 //BONUS
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
-
+function chickpea(){
+    let results = dishes.filter(function(el){
+        if(el.ingredients.includes('chickpea')){
+            return true;
+        }
+        else{
+            return false;
+        }})
+    
+    return results;
+}
+let theIngredients = chickpea();
+console.log('chickpea', theIngredients)
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
