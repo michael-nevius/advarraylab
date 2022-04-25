@@ -220,7 +220,22 @@ console.log('Mexican Foods: ', mexicanFood)
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
-
+function uniqueCuisine(){
+    let results = dishes.map(function(el){
+        return el.cuisine
+    })
+    let filteredResults = results.filter(function(el, index){
+        if(el == results[index-1]){
+            return false;
+        }
+        else{
+            return true;
+    }})
+    return filteredResults
+}
+    
+let uniqueDish = uniqueCuisine();
+console.log('The menu is:', uniqueDish)
 
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
@@ -259,36 +274,51 @@ console.log('Mexican Foods: ', mexicanFood)
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
-function chickpea(){
-    let results = dishes.filter(function(el){
-        if(el.ingredients.includes('chickpea')){
-            return true;
-        }
-        else{
-            return false;
-        }})
+// function chickpea(){
+//     let results = dishes.filter(function(el){
+//         if(el.ingredients.includes('chickpea')){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }})
     
-    return results;
-}
-let theIngredients = chickpea();
-console.log('chickpea', theIngredients)
+//     return results;
+// }
+// let theIngredients = chickpea();
+// console.log('chickpea', theIngredients)
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
-function getTotalServings(){
-    let menuServing = dishes.map(function(el){
-        return el.servings
-    })
+// function getTotalServings(){
+//     let menuServing = dishes.map(function(el){
+//         return el.servings
+//     })
 
-    let totalServingCount = menuServing.reduce(function(total, el){
-        return total + el
+//     let totalServingCount = menuServing.reduce(function(total, el){
+//         return total + el
        
-    })
-    return totalServingCount
-}
+//     })
+//     return totalServingCount
+// }
 
-let totalServings = getTotalServings();
-console.log('This is the total amount of servings on the menu: ', totalServings)
+// let totalServings = getTotalServings();
+// console.log('This is the total amount of servings on the menu: ', totalServings)
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
-
+// function uniqueCuisine(){
+//     let results = dishes.map(function(el){
+//         return el.cuisine
+//     })
+//     let filteredResults = results.filter(function(el, index){
+//         if(el.cuisine == results[index-1]){
+//             return false;
+//         }
+//         else{
+//             return true;
+//     }})
+//     return filteredResults
+// }
+    
+// let uniqueDish = uniqueCuisine();
+// console.log('The menu is:', uniqueDish)
