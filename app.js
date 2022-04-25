@@ -177,9 +177,26 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
-function evenServing(){
+// function evenServing(){
+//     let results = dishes.filter(function(el){
+//         if(el.servings % 2 == 0){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }})
+    
+//     return results;
+// }
+
+// let evenservingcount = evenServing();
+// console.log('dishes whose serving count is even', evenservingcount)
+
+//5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
+//Filter
+function tomatoAndCheese(){
     let results = dishes.filter(function(el){
-        if(el.servings % 2 == 0){
+        if(el.ingredients.includes('tomato') && el.ingredients.includes('cheese')){
             return true;
         }
         else{
@@ -189,17 +206,15 @@ function evenServing(){
     return results;
 }
 
-let evenservingcount = evenServing();
-console.log('dishes whose serving count is even', evenservingcount)
-
-//5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
-//Filter
-
+let theIngredients = tomatoAndCheese();
+console.log('tomato and cheese', theIngredients)
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
+
+
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
